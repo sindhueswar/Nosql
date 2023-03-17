@@ -1,0 +1,203 @@
+CREATE TABLE:
+
+create 'customer','name','mem_type'
+0 row(s) in 1.4750 seconds
+
+=> Hbase::Table - customer
+hbase(main):002:0> create 'car','brand','cust_id','model','engine','year'
+0 row(s) in 1.2420 seconds
+
+=> Hbase::Table - car
+hbase(main):003:0> create 'staff','name','cust_id','pos','slry'
+0 row(s) in 1.2770 seconds
+=> Hbase::Table - staff
+
+INSERTING DATA:
+
+hbase(main):004:0> put 'customer','123','name','abi'
+0 row(s) in 0.1370 seconds
+
+hbase(main):005:0> put 'customer','456','name','ragavi'
+0 row(s) in 0.0070 seconds
+
+hbase(main):006:0> put 'customer','789','name','ravi'
+0 row(s) in 0.0070 seconds
+
+hbase(main):007:0> put 'customer','123','mem_type','gold'
+0 row(s) in 0.0090 seconds
+
+hbase(main):008:0> put 'customer','456','mem_type','silver'
+0 row(s) in 0.0150 seconds
+
+hbase(main):009:0> put 'customer','789','mem_type','platinum'
+0 row(s) in 0.0090 seconds
+
+hbase(main):010:0> put 'car','b1','brand','bmw'
+0 row(s) in 0.0200 seconds
+
+hbase(main):011:0> put 'car','a3','brand','audi'
+0 row(s) in 0.0110 seconds
+
+hbase(main):012:0> put 'car','bez','brand','benz'
+0 row(s) in 0.0100 seconds
+
+hbase(main):013:0> put 'car','b1','cust_id','456'
+0 row(s) in 0.0110 seconds
+
+hbase(main):014:0> put 'car','a3','cust_id','123'
+0 row(s) in 0.0200 seconds
+
+hbase(main):015:0> put 'car','bez','cust_id','789'
+0 row(s) in 0.0250 seconds
+
+hbase(main):016:0> put 'car','b1','model','m5'
+0 row(s) in 0.0090 seconds
+
+hbase(main):017:0> put 'car','a3','model','a8'
+0 row(s) in 0.0110 seconds
+
+hbase(main):018:0> put 'car','bez','model','sclass'
+0 row(s) in 0.0110 seconds
+
+hbase(main):019:0> put 'car','b1','engine','4395cc'
+0 row(s) in 0.0210 seconds
+
+hbase(main):020:0> put 'car','a3','engine','2998cc'
+0 row(s) in 0.0120 seconds
+
+hbase(main):021:0> put 'car','bez','engine','2500cc'
+0 row(s) in 0.0100 seconds
+
+hbase(main):022:0> put 'car','b1','year','2015'
+0 row(s) in 0.0080 seconds
+
+hbase(main):024:0> put 'car','a3','year','2008'
+0 row(s) in 0.0120 seconds
+
+hbase(main):026:0> put 'car','bez','year','2022'
+0 row(s) in 0.0140 seconds
+
+hbase(main):027:0> put 'staff','st1','name','anu'
+0 row(s) in 0.0190 seconds
+
+hbase(main):028:0> put 'staff','st2','name','boopathy'
+0 row(s) in 0.0100 seconds
+
+hbase(main):029:0> put 'staff','st3','name','sathya'
+0 row(s) in 0.0100 seconds
+
+hbase(main):030:0> put 'staff','st1','cust_id','789'
+0 row(s) in 0.0160 seconds
+
+hbase(main):031:0> put 'staff','st2','cust_id','456'
+0 row(s) in 0.0090 seconds
+
+hbase(main):032:0> put 'staff','st3','cust_id','123'
+0 row(s) in 0.0060 seconds
+
+hbase(main):033:0> put 'staff','st1','pos','manager'
+0 row(s) in 0.0120 seconds
+
+hbase(main):034:0> put 'staff','st2','pos','supervisor'
+0 row(s) in 0.0150 seconds
+
+hbase(main):035:0> put 'staff','st3','pos','dealer'
+0 row(s) in 0.0090 seconds
+
+hbase(main):036:0> put 'staff','st1','slry','242000'
+0 row(s) in 0.0090 seconds
+
+hbase(main):037:0> put 'staff','st2','slry','30000'
+0 row(s) in 0.0090 seconds
+
+hbase(main):038:0> put 'staff','st3','slry','15000'
+0 row(s) in 0.0080 seconds
+
+READING DATA:
+
+hbase(main):039:0> scan 'customer'
+ROW                       COLUMN+CELL                                                           
+ 123                      column=mem_type:, timestamp=1679073745569, value=gold                 
+ 123                      column=name:, timestamp=1679073661684, value=abi                      
+ 456                      column=mem_type:, timestamp=1679073775205, value=silver               
+ 456                      column=name:, timestamp=1679073689769, value=ragavi                   
+ 789                      column=mem_type:, timestamp=1679073800588, value=platinum             
+ 789                      column=name:, timestamp=1679073713175, value=ravi                     
+3 row(s) in 0.0410 seconds
+
+hbase(main):040:0> scan 'car'
+ROW                       COLUMN+CELL                                                           
+ a3                       column=brand:, timestamp=1679073868703, value=audi                    
+ a3                       column=cust_id:, timestamp=1679073974248, value=123                   
+ a3                       column=engine:, timestamp=1679074148946, value=2998cc                 
+ a3                       column=model:, timestamp=1679074058173, value=a8                      
+ a3                       column=year:, timestamp=1679074246669, value=2008                     
+ b1                       column=brand:, timestamp=1679073840211, value=bmw                     
+ b1                       column=cust_id:, timestamp=1679073950668, value=456                   
+ b1                       column=engine:, timestamp=1679074126982, value=4395cc                 
+ b1                       column=model:, timestamp=1679074023255, value=m5                      
+ b1                       column=year:, timestamp=1679074201928, value=2015                     
+ bez                      column=brand:, timestamp=1679073899338, value=benz                    
+ bez                      column=cust_id:, timestamp=1679074000127, value=789                   
+ bez                      column=engine:, timestamp=1679074172904, value=2500cc                 
+ bez                      column=model:, timestamp=1679074087021, value=sclass                  
+ bez                      column=year:, timestamp=1679074294593, value=2022                     
+3 row(s) in 0.0240 seconds
+
+hbase(main):041:0> scan 'staff'
+ROW                       COLUMN+CELL                                                           
+ st1                      column=cust_id:, timestamp=1679074419142, value=789                   
+ st1                      column=name:, timestamp=1679074348096, value=anu                      
+ st1                      column=pos:, timestamp=1679074482663, value=manager                   
+ st1                      column=slry:, timestamp=1679074552179, value=242000                   
+ st2                      column=cust_id:, timestamp=1679074441307, value=456                   
+ st2                      column=name:, timestamp=1679074371871, value=boopathy                 
+ st2                      column=pos:, timestamp=1679074504070, value=supervisor                
+ st2                      column=slry:, timestamp=1679074577991, value=30000                    
+ st3                      column=cust_id:, timestamp=1679074463951, value=123                   
+ st3                      column=name:, timestamp=1679074396042, value=sathya                   
+ st3                      column=pos:, timestamp=1679074523522, value=dealer                    
+ st3                      column=slry:, timestamp=1679074597289, value=15000                    
+3 row(s) in 0.0490 seconds
+
+UPDATING DATA:
+
+hbase(main):042:0> put 'staff','st3','slry','30000'
+0 row(s) in 0.0080 seconds
+
+hbase(main):043:0> scan 'staff'
+ROW                       COLUMN+CELL                                                           
+ st1                      column=cust_id:, timestamp=1679074419142, value=789                   
+ st1                      column=name:, timestamp=1679074348096, value=anu                      
+ st1                      column=pos:, timestamp=1679074482663, value=manager                   
+ st1                      column=slry:, timestamp=1679074552179, value=242000                   
+ st2                      column=cust_id:, timestamp=1679074441307, value=456                   
+ st2                      column=name:, timestamp=1679074371871, value=boopathy                 
+ st2                      column=pos:, timestamp=1679074504070, value=supervisor                
+ st2                      column=slry:, timestamp=1679074577991, value=30000                    
+ st3                      column=cust_id:, timestamp=1679074463951, value=123                   
+ st3                      column=name:, timestamp=1679074396042, value=sathya                   
+ st3                      column=pos:, timestamp=1679074523522, value=dealer                    
+ st3                      column=slry:, timestamp=1679074691951, value=30000                    
+3 row(s) in 0.0190 seconds
+
+DELETING DATA:
+
+hbase(main):044:0> delete 'staff','st3','slry'
+0 row(s) in 0.0330 seconds
+
+hbase(main):045:0> scan 'staff'
+ROW                       COLUMN+CELL                                                           
+ st1                      column=cust_id:, timestamp=1679074419142, value=789                   
+ st1                      column=name:, timestamp=1679074348096, value=anu                      
+ st1                      column=pos:, timestamp=1679074482663, value=manager                   
+ st1                      column=slry:, timestamp=1679074552179, value=242000                   
+ st2                      column=cust_id:, timestamp=1679074441307, value=456                   
+ st2                      column=name:, timestamp=1679074371871, value=boopathy                 
+ st2                      column=pos:, timestamp=1679074504070, value=supervisor                
+ st2                      column=slry:, timestamp=1679074577991, value=30000                    
+ st3                      column=cust_id:, timestamp=1679074463951, value=123                   
+ st3                      column=name:, timestamp=1679074396042, value=sathya                   
+ st3                      column=pos:, timestamp=1679074523522, value=dealer                    
+ st3                      column=slry:, timestamp=1679074597289, value=15000                    
+3 row(s) in 0.0560 seconds
