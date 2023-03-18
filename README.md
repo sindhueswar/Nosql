@@ -26,6 +26,7 @@ The car table has the following columns:
               Customer ID
               Model
               Engine
+              Year
 
 
 
@@ -42,15 +43,13 @@ The staff table has the following columns:
 
 In this project, HBase is used as a distributed NoSQL database to store and retrieve large amounts of data. Some of the common HBase commands used in this project are:
 
-create - used to create a new table in HBase
+create - used to create a new table in HBase. This application creates three tables customer,car and staff.
 
-put - used to insert data into a specific row and column of a table
+put - used to insert data into a specific row and column of a table .All the values for the attributes of the tables are given using this command.This command also used to update the values for the attributes in the table.
 
-get - used to retrieve data from a specific row and column of a table
+scan - used to retrieve data from multiple rows and columns of a table.Using this command the three tables are displayed.
 
-scan - used to retrieve data from multiple rows and columns of a table
-
-delete - used to delete a specific row or column from a table
+delete - used to delete a specific row or column from a table .The st3 row of the staff table is deleted by this command
 
 These commands can be executed through the HBase shell or through client APIs in programming languages such as Java or Python.
-              Year
+              
