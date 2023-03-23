@@ -48,6 +48,8 @@ create - used to create a new table in HBase. This application creates three tab
            customer
            car 
            staff.
+           
+![1](https://user-images.githubusercontent.com/109608217/227257127-15e02d60-b1bb-4aae-a3d8-2fd860ea888e.png)
 
 
 put - used to insert data into a specific row and column of a table .All the values for the attributes of the tables are given using this command.This command also used to update the values for the attributes in the table.
