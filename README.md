@@ -43,9 +43,18 @@ The staff table has the following columns:
 
 In this project, HBase is used as a distributed NoSQL database to store and retrieve large amounts of data. Some of the common HBase commands used in this project are:
 
-create - used to create a new table in HBase. This application creates three tables customer,car and staff.
+create - used to create a new table in HBase. This application creates three tables:
+
+           customer
+           car 
+           staff.
+
 
 put - used to insert data into a specific row and column of a table .All the values for the attributes of the tables are given using this command.This command also used to update the values for the attributes in the table.
+            
+            
+            
+            
 
 scan - used to retrieve data from multiple rows and columns of a table.Using this command the three tables are displayed.
 
