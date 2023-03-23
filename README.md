@@ -58,7 +58,7 @@ put - used to insert data into a specific row and column of a table .All the val
             
             
             
-
+![4](https://user-images.githubusercontent.com/109608217/227262168-57d38423-eca7-420d-9638-0bac087c37aa.png)
  
 
 scan - used to retrieve data from multiple rows and columns of a table.Using this command the three tables are displayed.
