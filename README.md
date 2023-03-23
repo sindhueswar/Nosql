@@ -70,5 +70,8 @@ scan - used to retrieve data from multiple rows and columns of a table.Using thi
 
 delete - used to delete a specific row or column from a table .The st3 row of the staff table is deleted by this command
 
+
+![3](https://user-images.githubusercontent.com/109608217/227261736-0018be1f-78a8-4e98-adba-52d269c22a5d.png)
+
 These commands can be executed through the HBase shell or through client APIs in programming languages such as Java or Python.
               
