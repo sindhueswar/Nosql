@@ -58,10 +58,15 @@ put - used to insert data into a specific row and column of a table .All the val
             
             
             
- ![2](https://user-images.githubusercontent.com/109608217/227257146-0fc80820-1255-40e3-8878-2d87c57f73e6.png)
+
  
 
 scan - used to retrieve data from multiple rows and columns of a table.Using this command the three tables are displayed.
+
+
+ ![2](https://user-images.githubusercontent.com/109608217/227257146-0fc80820-1255-40e3-8878-2d87c57f73e6.png)
+ 
+ 
 
 delete - used to delete a specific row or column from a table .The st3 row of the staff table is deleted by this command
 
